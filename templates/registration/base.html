@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>css sample</title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="card">
+            {% block main %}
+            <p>※コンテンツがありません。</p>
+            {% endblock %}
+        </div>
+    </main>
+</body>
+
+</html>

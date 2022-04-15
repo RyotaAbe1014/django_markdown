@@ -1,0 +1,5 @@
+{% extends "registration/base.html" %}
+{% block main %}
+{% include "registration/_form.html" with submit_label="登録" %}
+<p><a href="{{request.META.HTTP_REFERER}}">戻る</a></p>
+{% endblock %}
