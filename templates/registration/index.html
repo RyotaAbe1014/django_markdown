@@ -1,9 +1,17 @@
 {% extends "registration/base.html" %}
-{% block main %}
-<h2>会員ページ</h2>
-<p>{{ user }}さん、こんにちは！</p>
+{% block main_contents %}
+<h1>dashboard!!</h1>
 
-<p><a href="{% url 'logout' %}">ログアウト</a></p>
-<p><a href="{% url 'password_change' %}">パスワードの変更</a></p>
-<p><a href="{% url 'password_reset' %}">パスワードを忘れた場合</a></p>
+<p class="pt-4">{{ user.username }}さん、こんにちは！</p>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">My Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'logout' %}">Logout</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'blogs:lesson_list' %}">Learning</a>
+  </li>
+</ul>
 {% endblock %}

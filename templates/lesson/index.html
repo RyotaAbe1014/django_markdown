@@ -1,0 +1,10 @@
+{% extends "lesson/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block main_contents %}
+
+{% for obj in object_list %}
+  <a href="{% url 'blogs:course_list' obj.id %}">{{ obj.name }}</a>
+{% endfor %}
+
+{% endblock %}

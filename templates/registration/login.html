@@ -1,11 +1,19 @@
 {% extends "registration/base.html" %}
-{% block main %}
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  <div class="form-control">
-    {{ form.as_p }}
-    <input type="submit" value="{{ submit_label }}" class="submit-btn" />
+{% block main_contents %}
+{% load widget_tweaks %}
+<div class="row pt-4">
+  <div class="card row col-8 mx-auto">
+    <div class="card-body text-center">
+      <h2 class="mb-5">Login</h2>
+      <form method="post">
+        <div class="justify-content-center">
+          {% csrf_token %}
+          {% render_field form.username class="form-control mb-5" placeholder="your name" %}
+          {% render_field form.password class="form-control mb-5" placeholder="password" %}
+        </div>
+        <input type="submit" value="Login" class="btn btn-primary btn-lg" />
+      </form>
+    </div>
   </div>
-</form>
+</div>
 {% endblock %}

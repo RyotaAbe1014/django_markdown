@@ -1,0 +1,9 @@
+{% extends "lesson/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block main_contents %}
+{% for article in articles %}
+  <a href="{% url 'blogs:article_detail' article.pk %}">{{ article.title }}</a>
+  <br>
+{% endfor %}
+{% endblock %}
