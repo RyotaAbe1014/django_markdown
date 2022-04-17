@@ -3,8 +3,16 @@
 {% load widget_tweaks %}
 {% block main_contents %}
 
-{% for obj in object_list %}
-  <a href="{% url 'blogs:course_list' obj.id %}">{{ obj.name }}</a>
-{% endfor %}
-
+<div class="row">
+  {% for obj in object_list %}
+  <div class="col-3 pt-4">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body text-center">
+        <h2 class=" card-title">{{ obj.name }}</h2>
+        <a href="{% url 'blogs:course_list' obj.id %}" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}
