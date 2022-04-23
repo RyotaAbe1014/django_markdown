@@ -3,5 +3,5 @@ from django  import forms
 
 
 class ArticleForm (forms.Form):
-    title = forms.CharField ()
+    title = forms.CharField()
     content = MDTextFormField()

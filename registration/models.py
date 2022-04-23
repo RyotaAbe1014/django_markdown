@@ -63,7 +63,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=150, blank=True)
     email = models.EmailField(_('email address'), unique=True)
-    employee_number = models.IntegerField(_("社員番号"), unique=True, default=1, validators=[MinValueValidator(0), MaxValueValidator(9999)], help_text=_("現在の社員番号の最大+1がデフォルトで入力されています"))
+    employee_number = models.IntegerField(_("社員番号"), unique=True, default=1, validators=[MinValueValidator(0), MaxValueValidator(9999)])
     is_staff = models.BooleanField(
         _('staff status'),
         default=False,
@@ -107,7 +107,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
-
-    def get_next_employee_number():
-        max_num = User.objects.values().aggregate(Max('employee_number'))
-        return max_num['employee_number__max'] + 1

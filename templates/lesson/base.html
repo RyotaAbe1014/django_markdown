@@ -20,12 +20,8 @@
       <div class="collapse navbar-collapse justify-content-end" id="navmenu">
         <div class="navbar-nav">
           {% if user.is_authenticated %}
-          {% if user.is_superuser %}
           <p class="navbar-brand">{{ user.username }}</p>
           <a class="nav-item nav-link" href="{% url 'logout' %}">ログアウト</a>
-          {% else %}
-          <a class="nav-item nav-link" href="{% url 'logout' %}">ログアウト</a>
-          {% endif %}
           {% endif %}
         </div>
       </div>
