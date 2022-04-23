@@ -1,28 +1,25 @@
 {% extends "lesson/base.html" %}
 {% load static %}
 {% load widget_tweaks %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/card.css' %}">
+{% endblock %}
 {% block main_contents %}
 
 <div class="row">
   {% for obj in object_list %}
   <div class="col-3 pt-4">
-    <div class="card" style="width: 18rem;">
-      <img src="/media/{{ obj.picture }}" class="card-img-top" alt="">
-      <div class="card-body text-center">
-        <h2 class="card-title text-center">{{ obj.name }}</h2>
-        <p class="card-text">{{ obj.summary }}</p>
-        <a href="{% url 'blogs:course_list' obj.id %}" class="btn btn-primary">Go somewhere</a>
+    <a href="{% url 'blogs:course_list' obj.id %}" class="card text-decoration-none link-dark">
+      <div class="pt-3 mx-auto">
+        <img src="/media/{{ obj.picture }}" class="" alt="" height="100" width="auto">
       </div>
-    </div>
+      <div class="card-body">
+        <h2 class="card-title">{{ obj.name }}</h2>
+        <p class="card-text">{{ obj.summary }}</p>
+      </div>
+    </a>
   </div>
   {% endfor %}
 </div>
 {% endblock %}
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>

@@ -21,7 +21,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
-    path('registration/', include('registration.urls')),
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(
         template_name='registration/index.html'), name='home'),

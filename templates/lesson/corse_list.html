@@ -2,11 +2,13 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block main_contents %}
-{% for article in articles %}
-<div class="card">
-  <div class="card-body">
-    <a class="h3" href="{% url 'blogs:article_detail' article.pk %}">{{ article.title }}</a>
+<div class="pt-4">
+  {% for article in articles %}
+  <div class="card">
+    <div class="card-body">
+      <a class="h3 text-decoration-none link-dark" href="{% url 'blogs:article_detail' article.pk %}">{{ article.title }}</a>
+    </div>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
 {% endblock %}
