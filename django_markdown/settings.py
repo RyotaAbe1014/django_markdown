@@ -82,8 +82,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django_markdown.wsgi.application'
 
+# WSGI_APPLICATION = 'django_markdown.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
